@@ -271,7 +271,7 @@ struct BreatheView: View {
                     if playSessionValues[currentIndex].displayLabel == .breath {
                         
                         timeInterval = currentSession.cycles[currentIndex / 4].inhale + currentSession.cycles[currentIndex / 4].exhale
-                        
+                         count  -= 1
                         let inBreathBeats = Int(currentSession.cycles[currentIndex / 4].inhale) - 1
                         let outBreathBeats = Int(currentSession.cycles[currentIndex / 4].exhale) - 1
                         player.startBreathRoutine(breaths: currentSession.cycles[currentIndex / 4].breaths,
@@ -399,7 +399,7 @@ struct BreatheView: View {
     {
         var totalTime : Double = 0
         for cycle in selectedSession.cycles {
-            totalTime += Double(cycle.breaths) * (cycle.inhale + cycle.exhale) + Double(cycle.breathHold) + Double(cycle.finalHold) + 22
+            totalTime += Double(cycle.breaths) * (cycle.inhale + cycle.exhale) + Double(cycle.breathHold) + Double(cycle.finalHold) + 24
             print(totalTime)
             print("Breath Time:\(Double(cycle.breaths) * (cycle.inhale + cycle.exhale))  Breath Hold:\(Double(cycle.breathHold))  Final Hold:\(Double(cycle.finalHold))")
         }
