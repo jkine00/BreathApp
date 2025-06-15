@@ -20,7 +20,7 @@ struct BreatheView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var showingRegistrationAlert = false
-    
+    @State var disableBtnFor1Sec: Bool = false
     
     @Query(sort:\Session.title) private var sessions: [Session]
     @State private var selectedSession: Session? = Session(title: "")
@@ -99,33 +99,44 @@ struct BreatheView: View {
         
             Divider()
             HStack {
+                
                 Button {
                    // print("Play Button Pressed: \(isPlaying)")
-                    if !isPlaying {
-                        isPlaying.toggle()
-                        player.stopAudio()
-                        currentCycleCount = 1
-                        startSession()
-                    } else {
-                        
-                        player.stopAudio()
-                        isPlaying.toggle()
-                        cycleTimer?.invalidate()
-                        cycleTimer = nil
-                        sessionTimer?.invalidate()
-                        sessionTimer = nil
-                        totalCycleTime = 0
-                        total = 0
-                        currentIndex = 0
-                        count = playSessionValues[currentIndex].duration
-                        total = playSessionValues[currentIndex].duration
-                        if let session = selectedSession {
-                            totalCycleTime = setTotalSessionTime(selectedSession: session)
-                            totalTimeStr = formatTime(time: totalCycleTime)
-                        }
-                        breathLabel = true
-                        
+                    guard !disableBtnFor1Sec else { return }
+
+                    disableBtnFor1Sec = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        disableBtnFor1Sec = false
                     }
+                   
+                        if !isPlaying {
+                            isPlaying.toggle()
+                            player.stopAudio()
+                            selectedSession = sessions.first
+                            
+                            currentCycleCount = 1
+                            startSession()
+                        } else {
+                            selectedSession = nil
+                            player.stopAudio()
+                            isPlaying.toggle()
+                            cycleTimer?.invalidate()
+                            cycleTimer = nil
+                            sessionTimer?.invalidate()
+                            sessionTimer = nil
+                            totalCycleTime = 0
+                            total = 0
+                            currentIndex = 0
+                            count = playSessionValues[currentIndex].duration
+                            total = playSessionValues[currentIndex].duration
+                            if let session = selectedSession {
+                                totalCycleTime = setTotalSessionTime(selectedSession: session)
+                                totalTimeStr = formatTime(time: totalCycleTime)
+                            }
+                            breathLabel = true
+                            
+                        }
+                    
                     
                 } label: {
                     switch isPlaying {
@@ -135,7 +146,7 @@ struct BreatheView: View {
                     }
                 }
                 
-                .disabled(sessions.isEmpty)
+                .disabled(disableBtnFor1Sec) // this greys it out and prevents taps
                 .foregroundStyle(.blue)
                 .font(.system(size: 38))
                 
@@ -233,7 +244,7 @@ struct BreatheView: View {
     }
     
     func announceCurentCycle(currentCycle:Int, lastCycle:Int) {
-            
+        isPlaying = true
         var utterance = AVSpeechUtterance()
         if currentCycle < lastCycle {
             utterance = AVSpeechUtterance(string:"Cycle number \(currentCycle)")
