@@ -1,0 +1,47 @@
+# Xcode workspace/user data
+*.xcworkspace
+*.xcuserstate
+xcuserdata/
+
+# Build products
+build/
+DerivedData/
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# Firebase crashlytics
+*.dSYM.zip
+*.dSYM
+
+# macOS system files
+.DS_Store
+
+# Xcode project scheme settings (optional)
+*.xcscheme
+*.xcsettings
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Archive files
+*.xcarchive
+
+# IDE metadata
+.idea/
+.vscode/
