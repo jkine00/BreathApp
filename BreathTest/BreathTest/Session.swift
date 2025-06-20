@@ -15,6 +15,16 @@ enum clockDisplayLabel: String, Codable {
     case cycleDescription
 }
 
+enum CycleStages: String, Codable {
+    case announceCycleNo
+    case breaths
+    case breathsRecovery
+    case longHold
+    case longHoldRecovery
+    case shortHold
+    case prepareNextCycle
+}
+
 struct Cycle: Codable,Hashable, Identifiable {
     var id: UUID = .init()
     var breaths = 20
@@ -23,6 +33,20 @@ struct Cycle: Codable,Hashable, Identifiable {
     var breathHold = 10
     var finalHold = 10
    
+    
+}
+
+struct SessionAudioInfo2: Codable,Hashable, Identifiable {
+    var id: UUID = .init()
+    var currentCycleStage: CycleStages = .announceCycleNo
+    var upDateCount = true
+    var displayText = ["","",""]
+    var audioStr = [""]
+    var extType = "wav"
+    var duration = 0
+    var interval: TimeInterval = 0.0
+    var fadeAudio: Bool = false
+    
     
 }
 

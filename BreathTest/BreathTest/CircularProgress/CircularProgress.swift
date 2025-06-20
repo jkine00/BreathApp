@@ -121,7 +121,7 @@ public struct CircularProgressView: View {
                 if showText {
                     //Text at the centre
                     VStack {
-                        //Text for current value
+                        
                         Text(displayText(breathLabel: breathLabel))
                             .font(breathLabel ? fontBreath: fontOne)
                             .foregroundColor(colorOne)
@@ -136,11 +136,6 @@ public struct CircularProgressView: View {
             }
         
         .onAppear {
-//            print(UIScreen.main.bounds.height)
-//            print(diameterConstant)
-//
-//            print(lineWidth)
-            
         }
 
         .frame(height: diameterConstant)

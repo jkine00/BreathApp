@@ -10,6 +10,7 @@
 		812AE1462DE22B4000C643DA /* meditation.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 812AE1452DE22B4000C643DA /* meditation.m4a */; };
 		8147D3AF2DB6FCE4009C1588 /* Tock2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8147D3AE2DB6FCE4009C1588 /* Tock2.m4a */; };
 		8147D3B32DB6FCE4009C1588 /* Inhale2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8147D3AD2DB6FCE4009C1588 /* Inhale2.m4a */; };
+		816687662E005B18008A8145 /* cycle#1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 816687652E005B18008A8145 /* cycle#1.wav */; };
 		817C27B02DC6B335004B1A7E /* recoveryBreath3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 817C27AF2DC6B335004B1A7E /* recoveryBreath3.m4a */; };
 		817C27B22DCAC768004B1A7E /* recoveryBreath.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 817C27B12DCAC768004B1A7E /* recoveryBreath.m4a */; };
 		817C27B82DCC1690004B1A7E /* Bell2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 817C27B72DCC1690004B1A7E /* Bell2.m4a */; };
@@ -27,6 +28,7 @@
 		8147D3AD2DB6FCE4009C1588 /* Inhale2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inhale2.m4a; sourceTree = "<group>"; };
 		8147D3AE2DB6FCE4009C1588 /* Tock2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tock2.m4a; sourceTree = "<group>"; };
 		8151649E2CE6C50500795CC6 /* BreathTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreathTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		816687652E005B18008A8145 /* cycle#1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cycle#1.wav"; sourceTree = "<group>"; };
 		817C27AF2DC6B335004B1A7E /* recoveryBreath3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = recoveryBreath3.m4a; sourceTree = "<group>"; };
 		817C27B12DCAC768004B1A7E /* recoveryBreath.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = recoveryBreath.m4a; sourceTree = "<group>"; };
 		817C27B72DCC1690004B1A7E /* Bell2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bell2.m4a; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		81E4B3382D3D54B900A44C4C /* Audio Files */ = {
 			isa = PBXGroup;
 			children = (
+				816687652E005B18008A8145 /* cycle#1.wav */,
 				817C27BB2DCEB22E004B1A7E /* bell.m4a */,
 				817C27BC2DCEB22E004B1A7E /* exhale.m4a */,
 				817C27BD2DCEB22E004B1A7E /* inhale.m4a */,
@@ -174,6 +177,7 @@
 			files = (
 				817C27BF2DCEB22E004B1A7E /* bell.m4a in Resources */,
 				812AE1462DE22B4000C643DA /* meditation.m4a in Resources */,
+				816687662E005B18008A8145 /* cycle#1.wav in Resources */,
 				817C27C02DCEB22E004B1A7E /* tock.m4a in Resources */,
 				817C27C12DCEB22E004B1A7E /* exhale.m4a in Resources */,
 				817C27C22DCEB22E004B1A7E /* inhale.m4a in Resources */,

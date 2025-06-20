@@ -270,9 +270,10 @@ struct BreatheView: View {
                 if currentIndex < playSessionValues.count {
                    
                     if currentCycleCount == currentIndex / 4 + 1 && currentIndex + 1 <= totalSessionCycles * 4 {
-                        announceCurentCycle(currentCycle: currentCycleCount, lastCycle: totalSessionCycles)
+                        //announceCurentCycle(currentCycle: currentCycleCount, lastCycle: totalSessionCycles)
+                        player.playAudio(fileName: "cycle#1", fileExtension: "wav",playForDuration: 2.0)
                         currentCycleCount += 1
-                        await delay(seconds: 3.0)
+                        await delay(seconds: 2.0)
                     }
                                         
                     count = playSessionValues[currentIndex].duration
